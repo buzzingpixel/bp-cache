@@ -1,0 +1,37 @@
+{
+    "name": "buzzingpixel/bp-cache",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "TJ Draper",
+            "email": "tj@buzzingpixel.com",
+            "homepage": "https://buzzingpixel.com"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "psr/cache": "^3.0"
+    },
+    "require-dev": {
+        "codedungeon/phpunit-result-printer": "^0.31.0",
+        "doctrine/coding-standard": "^9",
+        "friendsofphp/php-cs-fixer": "^2.18",
+        "league/flysystem": "^1.0.0",
+        "phpstan/phpstan": "^0.12.69",
+        "phpstan/phpstan-deprecation-rules": "^0.12.6",
+        "phpstan/phpstan-strict-rules": "^0.12.9",
+        "phpunit/phpunit": "^9.5",
+        "squizlabs/php_codesniffer": "^3.5",
+        "symfony/var-dumper": "^5.3",
+        "vimeo/psalm": "^4.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "BuzzingPixel\\BpCache\\": "src"
+        }
+    },
+    "config": {
+        "bin-compat": "full",
+        "sort-packages": true
+    }
+}
