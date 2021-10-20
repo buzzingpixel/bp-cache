@@ -1,0 +1,9 @@
+parameters:
+    level: max
+    treatPhpDocTypesAsCertain: false
+    ignoreErrors:
+    excludes_analyse:
+
+includes:
+    - vendor/phpstan/phpstan-deprecation-rules/rules.neon
+    - vendor/phpstan/phpstan-strict-rules/rules.neon

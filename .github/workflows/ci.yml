@@ -1,0 +1,20 @@
+name: CI
+on: [push]
+jobs:
+  code-quality:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+      - name: Install composer dependencies
+        run: composer install --no-interaction --no-ansi --no-progress
+      - name: Run PHPUnit
+        run: XDEBUG_MODE=coverage ./vendor/bin/phpunit
+      - name: Run PHPStan
+        run: php -d memory_limit=4G ./vendor/bin/phpstan analyse src --no-progress
+      - name: Run Psalm
+        run: php -d memory_limit=4G ./vendor/bin/psalm
+      - name: Run phppcs
+        run: php -d memory_limit=4G ./vendor/bin/phpcs
+      - name: Run php-cs-fixer
+        run: ./vendor/bin/php-cs-fixer fix -v --dry-run --stop-on-violation --using-cache=no
